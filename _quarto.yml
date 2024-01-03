@@ -1,0 +1,49 @@
+project:
+  type: website
+  output-dir : docs
+
+website:
+  favicon: '/images/logo.png'
+  image: '/images/logo.png'
+  #title: "<img src='/images/logo.png' width='10%' height='10%'/>"
+  reader-mode: true
+  navbar:
+    logo: /images/logo.png
+    tools:
+      - icon: github
+        href: https://github.com/hizocar
+    left:
+      - text: "Home"
+        file: index.qmd
+      - sidebar:AboutMe
+      - sidebar:Courses
+
+  sidebar:
+   - id: AboutMe
+     style: "docked"
+     search: true
+     contents: 
+       - section: "AboutMe"
+         contents:
+          - personal/perfil.qmd
+          - personal/academica.qmd
+          - personal/laboral.qmd
+   - id: Courses
+     style: "docked"
+     search: true
+     contents:
+      - machine_learning_egei/classes.qmd
+      - introduction_to_python/classes.qmd
+      - data_science_ingemat/classes.qmd
+format:
+  html:
+    theme: 
+          light: minty
+          dark: [minty, theme-dark.scss]
+    css: styles.css
+    toc: true
+
+
+
+
+
